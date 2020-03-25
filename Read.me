@@ -1,1 +1,44 @@
 "# ITCS_3160_Group_Project" 
+
+Group Members: Richard Scott, Dagim Worku, Cheng Yang
+Introduction- Due to several concerns over health and safety, delivering food to our campus grounds is becoming more difficult by the day. Because of this, campus officials tend to not like the idea of this delivery system unless it is operated by the University itself. To solve this matter, we will be starting a company which gives the University guaranteed full control of the delivery system. 
+
+Use Case - John is a student at UNC Charlotte. He wants to get food from a nearby restaurant which is supported by the University’s delivery service. He goes to UNCCDelivers.com and selects the restaurant he wants food from. He selects the food items and options he wants from the restaurant and checks out. His total price was the standard cost plus tax and the $5.00 flat delivery fee. When the order is placed, the University-associated delivery system calls the order in to the restaurant and dispatches a driver to go pick it up. The driver goes to the restaurant, picks up the food, and returns to campus, where he is given card-swipe access to John’s building and is able to deliver the food right to John’s door.
+
+Business Rules:
+The employees have to be either students, faculty or staff. 
+The driver can only deliver food to dorms, classroom buildings and designated locations.
+The driver must provide car information. 
+The driver must never open any containers, bags, or food items.
+The driver must wear gloves whenever handling food and must keep their car clean.
+
+EERD - Outline of Entities
+Persons - students, faculty, staff, drivers
+	Attributes: personid (PK), name, email, cell, etc
+	Faculty additional attributes: title, highest degree, and degree college
+	Staff additional attributes:  Position and AdminYorN
+	Students additional attributes: GradYear and major plus type (undergraduate, graduate)
+Restaurants
+	Attributes: restaurantid(PK), name, address, phone number, menu
+Menus	
+	Attributes: restaurantid(PK)
+Food items
+	Attributes: restaurantid, foodid(PK), name, price
+Locations - Dorms, Campus buildings, other designated locations
+	Attributes: LocationID, LocationName, LocationAddress, DeliveryPoint
+
+MySQL Queries (three)- Within our queries, we will keep track of: 
+People (students, faculty and staff) - query 1
+Locations on campus(dorms, classroom buildings, designated drop off)- query 2
+Drivers (car information, drivers rating) - query 3
+
+
+Trigger - When an action is performed log it into the log files and check if the user has permission to perform the action. If the user does not have permission send out an error and then notify an administrator.
+
+Stored Procedure- stored SQL queries that are used frequently that can be called
+	Get restaurant data
+	Get user information
+
+Web/App Implementation (Optional) or Description of Future Work- We have not decided if the software will be implemented as an application or a website. A Use Case diagram will allow us to think of more features and attributes that were not provided by the project document. Then we can take the knowledge from the project document and the Use Case diagram and model the database through an EERD.
+
+MySQL dump - Research on how to implement a MySQL dump so it can be implemented at a later date.
