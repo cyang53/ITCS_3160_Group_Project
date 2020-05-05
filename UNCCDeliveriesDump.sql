@@ -16,6 +16,20 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Temporary view structure for view `cust_restaurant`
+--
+
+DROP TABLE IF EXISTS `cust_restaurant`;
+/*!50001 DROP VIEW IF EXISTS `cust_restaurant`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `cust_restaurant` AS SELECT 
+ 1 AS `nameRestaurant`,
+ 1 AS `addressRestaurant`,
+ 1 AS `phoneRestaurant`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Table structure for table `driver`
 --
 
@@ -61,6 +75,23 @@ LOCK TABLES `driver_has_restaurant` WRITE;
 /*!40000 ALTER TABLE `driver_has_restaurant` DISABLE KEYS */;
 /*!40000 ALTER TABLE `driver_has_restaurant` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary view structure for view `drivers`
+--
+
+DROP TABLE IF EXISTS `drivers`;
+/*!50001 DROP VIEW IF EXISTS `drivers`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `drivers` AS SELECT 
+ 1 AS `personID`,
+ 1 AS `personPhone`,
+ 1 AS `personEmail`,
+ 1 AS `personRole`,
+ 1 AS `personLocationId`,
+ 1 AS `driverId`*/;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Table structure for table `food`
@@ -162,7 +193,7 @@ CREATE TABLE `order` (
 
 LOCK TABLES `order` WRITE;
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
-INSERT INTO `order` VALUES (5,14,18),(61,857,912),(109,853,472),(138,30,634),(229,979,376),(245,213,349),(263,785,996),(269,349,558),(271,60,949),(327,459,5),(347,389,304),(366,148,480),(386,816,309),(427,177,22),(490,300,706),(517,432,789),(574,322,72),(581,342,752),(602,564,553),(608,789,768),(615,74,636),(627,966,505),(672,264,595),(682,141,179),(684,567,993),(690,723,894),(761,419,915),(879,887,713),(890,842,539),(911,489,283),(985,974,117);
+INSERT INTO `order` VALUES (5,14,165801),(61,857,16220),(109,853,165801),(138,30,165801),(229,979,16351),(245,213,349),(263,785,996),(269,349,558),(271,60,949),(327,459,5),(347,389,304),(366,148,480),(386,816,309),(427,177,22),(490,300,706),(517,432,789),(574,322,72),(581,342,752),(602,564,553),(608,789,768),(615,74,636),(627,966,505),(672,264,595),(682,141,179),(684,567,993),(690,723,894),(761,419,915),(879,887,713),(890,842,539),(911,489,283),(985,974,117);
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -231,7 +262,8 @@ CREATE TABLE `restaurant` (
   `addressRestaurant` varchar(100) DEFAULT NULL,
   `phoneRestaurant` int DEFAULT NULL,
   `menuId` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idRestaurant`)
+  PRIMARY KEY (`idRestaurant`),
+  KEY `restaurantInfo` (`nameRestaurant`,`addressRestaurant`,`phoneRestaurant`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -241,7 +273,7 @@ CREATE TABLE `restaurant` (
 
 LOCK TABLES `restaurant` WRITE;
 /*!40000 ALTER TABLE `restaurant` DISABLE KEYS */;
-INSERT INTO `restaurant` VALUES (0,'Vulputate Ltd','255-850 Mauris Rd.',80181,100),(1,'Senectus Et Netus Associates','1793 Nisl St.',56554,101),(2,'Accumsan Laoreet Inc.','9903 Neque Ave',5767,102),(3,'Aliquet Molestie LLC','7953 A Av.',5391,104),(5,'Augue Scelerisque Industries','Ap #640-3424 Rutrum Street',41012,105),(6,'Luctus Ut Pellentesque Institute','4023 Vitae Avenue',5965,106),(7,'Odio Semper PC','Ap #192-6163 Dolor. Rd.',874587,107),(8,'Dui Suspendisse Ac PC','9591 Egestas Ave',4269,108),(9,'Donec Tempus Company','P.O. Box 605, 5525 Lorem Avenue',24580,109),(10,'In Magna Consulting','Ap #860-8276 Id St.',5578,110);
+INSERT INTO `restaurant` VALUES (0,'Vulputate Ltd','255-850 Mauris Rd.',80181,'100'),(1,'Senectus Et Netus Associates','1793 Nisl St.',56554,'101'),(2,'Accumsan Laoreet Inc.','9903 Neque Ave',5767,'102'),(3,'Aliquet Molestie LLC','7953 A Av.',5391,'104'),(5,'Augue Scelerisque Industries','Ap #640-3424 Rutrum Street',41012,'105'),(6,'Luctus Ut Pellentesque Institute','4023 Vitae Avenue',5965,'106'),(7,'Odio Semper PC','Ap #192-6163 Dolor. Rd.',874587,'107'),(8,'Dui Suspendisse Ac PC','9591 Egestas Ave',4269,'108'),(9,'Donec Tempus Company','P.O. Box 605, 5525 Lorem Avenue',24580,'109'),(10,'In Magna Consulting','Ap #860-8276 Id St.',5578,'110');
 /*!40000 ALTER TABLE `restaurant` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -252,6 +284,67 @@ UNLOCK TABLES;
 --
 -- Dumping routines for database 'unccdeliveries'
 --
+/*!50003 DROP PROCEDURE IF EXISTS `SelectAll` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SelectAll`()
+BEGIN
+	SELECT * FROM driver;
+    SELECT * FROM food;
+    SELECT * FROM location;
+    SELECT * FROM menu;
+    SELECT * FROM `order`;
+    SELECT * FROM person;
+    SELECT * FROM restaurant;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+
+--
+-- Final view structure for view `cust_restaurant`
+--
+
+/*!50001 DROP VIEW IF EXISTS `cust_restaurant`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `cust_restaurant` AS select `restaurant`.`nameRestaurant` AS `nameRestaurant`,`restaurant`.`addressRestaurant` AS `addressRestaurant`,`restaurant`.`phoneRestaurant` AS `phoneRestaurant` from `restaurant` where (`restaurant`.`idRestaurant` > 0) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `drivers`
+--
+
+/*!50001 DROP VIEW IF EXISTS `drivers`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `drivers` AS select `person`.`personId` AS `personID`,`person`.`personPhone` AS `personPhone`,`person`.`personEmail` AS `personEmail`,`person`.`personRole` AS `personRole`,`person`.`personLocationId` AS `personLocationId`,`driver`.`driverId` AS `driverId` from (`person` join `driver`) where (`person`.`Driver_driverId` = `driver`.`driverId`) order by `person`.`personId` desc */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -262,4 +355,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-15  0:01:36
+-- Dump completed on 2020-05-05  1:51:57
