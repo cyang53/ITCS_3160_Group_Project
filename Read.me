@@ -32,24 +32,22 @@ Business Rules:
 
 EERD- Outline of Entities
 
- - Persons - students, faculty, staff, drivers
- - - Attributes: personid (PK), name, email, cell, etc
- - - - Faculty additional attributes: title, highest degree, and degree college
- - - - Staff additional attributes:  Position and AdminYorN
- - - - Students additional attributes: GradYear and major plus type 
-	(undergraduate, graduate)
+ - Person
+ - - Attributes: personId (PK), personName, personEmail, personPhone, personRole, etc
+ 
 
- - Restaurants
- - - Attributes: restaurantid(PK), name, address, phone number, menu
+ - Restaurant
+ - - Attributes: restaurantId(PK), nameRestaurant, addressRestaurant, phoneRestaurant, menuId
 
- - Menus	
- - - Attributes: restaurantid(PK)
+ - Menu	
+ - - Attributes: restaurantId(PK), menuId
 
- - Food items
- - - Attributes: restaurantid, foodid(PK), name, price
+ - Food
+ - - Attributes: menuId, foodId(PK), description, price
 
- - Locations - Dorms, Campus buildings, other designated locations
- - - Attributes: LocationID, LocationName, LocationAddress, DeliveryPoint
+ - Location - Dorms, Campus buildings, other designated locations
+ - - Attributes: idLocations, locationName, locationAddress, deliveryPoint, Driver_driverId, 
+	locationType, Order_idOrder
 
 
 MySQL Queries (three)- Within our queries, we will keep track of: 
@@ -57,10 +55,6 @@ MySQL Queries (three)- Within our queries, we will keep track of:
  - Locations on campus(dorms, classroom buildings, designated drop off)- query 2
  - Drivers (car information, drivers rating) - query 3
 
-
-Trigger- When an action is performed log it into the log files and check if the 
-user has permission to perform the action. If the user does not have permission 
-send out an error and then notify an administrator.
 
 Stored Procedure- stored SQL queries that are used frequently that can be called
 Get restaurant data
