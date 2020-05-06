@@ -17,6 +17,7 @@
 
 --
 -- Temporary view structure for view `cust_restaurant`
+-- View displays restaurant information to the user
 --
 
 DROP TABLE IF EXISTS `cust_restaurant`;
@@ -294,6 +295,7 @@ UNLOCK TABLES;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
+-- Procedure that takes in a restaurant name and then returns all items on the menu and its cost
 CREATE DEFINER=`root`@`localhost` PROCEDURE `getMenu`(restaurantName VARCHAR(55))
 BEGIN
 	SELECT DISTINCT food.`description`, price
@@ -320,6 +322,7 @@ DELIMITER ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SelectAll`()
+-- Procedure that selects and displays all tables
 BEGIN
 	SELECT * FROM driver;
     SELECT * FROM food;
