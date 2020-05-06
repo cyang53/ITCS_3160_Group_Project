@@ -245,7 +245,7 @@ CREATE TABLE `person` (
 
 LOCK TABLES `person` WRITE;
 /*!40000 ALTER TABLE `person` DISABLE KEYS */;
-INSERT INTO `person` VALUES (1783,'Holmes Vazquez',5501560,'In.scelerisque.scelerisque@estarcuac.co.uk','Driver',87,1603),(3328,'Hiram Marquez',4535172,'gravida.sagittis.Duis@elitpharetraut.com','Driver',72,16160),(3462,'Nehru Stevenson',8477701,'in.lobortis@etnuncQuisque.com','Driver',11,16120),(4752,'Armando Richmond',6360582,'mattis@risus.edu','Driver',59,16351),(5758,'Nehru Hendricks',5075125,'vel@velest.org','Driver',26,16591),(7086,'Herman Dominguez',5270443,'malesuada.fames.ac@SuspendisseeleifendCras.ca','Driver',31,16641),(12571,'Abbot Summers',5229292,'Donec@nequeet.co.uk','Driver',81,16760),(17213,'Alex',8408745,'elit.fermentum@In.co.uk','Student',4,378),(19506,'Gary',6049740,'nisi.a@Phasellusliberomauris.com','Student',51,625),(23387,'Alex',7012424,'sed.dolor@ultricesiaculis.ca','Driver',63,211),(24156,'Allen',6595331,'lorem@Curabitursed.org','Staff',22,359),(25048,'Susy',1388772,'tellus.eu.augue@Sed.edu','Staff',13,800),(25061,'Mary',2807561,'magna.Praesent@imperdiet.co.uk','Faculty',91,918),(26318,'Jim',5682399,'nunc.id@enimnon.org','Faculty',73,258),(28773,'Smith',8482896,'tincidunt.nibh.Phasellus@mauris.ca','Faculty',47,117),(33015,'Allen',5467541,'lectus.rutrum.urna@ligulaAenean.net','Driver',49,625),(33495,'Smith',7942088,'mauris@nullamagnamalesuada.net','Staff',19,360),(34011,'Tim',1253333,'Sed.eu@scelerisquesedsapien.net','Faculty',98,399),(40954,'Susan',8087835,'nunc.In@rhoncusDonecest.net','Faculty',12,966),(42181,'Susan',6678221,'Mauris@utmi.edu','Driver',84,492),(45598,'John',7509553,'Class.aptent.taciti@nisi.edu','Staff',45,436),(53391,'Susy',3872672,'facilisis@tinciduntnequevitae.co.uk','Student',50,697),(56237,'Gary',2825355,'neque.Nullam.nisl@Donec.co.uk','Student',18,808),(58389,'Allen',6671254,'ut@Praesent.org','Faculty',33,568),(58757,'Smith',2126870,'feugiat.tellus@euligulaAenean.com','Driver',61,629),(60613,'Alex',5188478,'massa.Suspendisse.eleifend@natoque.com','Student',23,896),(65298,'Smith',8711664,'auctor.Mauris.vel@molestiepharetra.ca','Faculty',66,403),(65617,'Susan',2270775,'ut.nulla@non.edu','Staff',87,22),(68392,'Susan',8017002,'nulla.In@aliquetdiamSed.com','Student',41,87),(71147,'John',8815758,'Aenean.eget@necmalesuadaut.co.uk','Faculty',46,934),(71258,'Smith',9585528,'Ut@pharetra.co.uk','Student',25,443),(72060,'Susy',8211433,'id@nequenonquam.co.uk','Student',18,230),(72406,'Mary',5654373,'Aliquam@risusDonecegestas.edu','Faculty',69,233),(84429,'Tim',1818653,'imperdiet@congue.ca','Driver',33,962),(84699,'Jim',9106840,'nibh@posuere.net','Staff',81,9),(93933,'Jim',2061120,'lorem.sit@Namconsequatdolor.com','Faculty',96,916),(96957,'Mary',4226802,'aliquet.sem@maurisidsapien.ca','Student',5,529),(97161,'Tim',4567711,'urna@Sednec.co.uk','Student',37,849),(97892,'Smith',4125614,'nec.eleifend.non@dis.ca','Staff',52,100),(98109,'Alex',9395972,'at@Aeneanegetmagna.co.uk','Driver',44,910);
+INSERT INTO `person` VALUES (1783,'Holmes Vazquez',5501560,'In.scelerisque.scelerisque@estarcuac.co.uk','Driver',87,1603),(3328,'Hiram Marquez',4535172,'gravida.sagittis.Duis@elitpharetraut.com','Driver',72,16160),(3462,'Nehru Stevenson',8477701,'in.lobortis@etnuncQuisque.com','Driver',11,16120),(4752,'Armando Richmond',6360582,'mattis@risus.edu','Driver',59,16351),(5758,'Nehru Hendricks',5075125,'vel@velest.org','Driver',26,16591),(7086,'Herman Dominguez',5270443,'malesuada.fames.ac@SuspendisseeleifendCras.ca','Driver',31,16641),(12345,'John Doe',7654321,'fake@mail.com','Student',123,45678),(12571,'Abbot Summers',5229292,'Donec@nequeet.co.uk','Driver',81,16760),(17213,'Alex',8408745,'elit.fermentum@In.co.uk','Student',4,378),(19506,'Gary',6049740,'nisi.a@Phasellusliberomauris.com','Student',51,625),(23387,'Alex',7012424,'sed.dolor@ultricesiaculis.ca','Driver',63,211),(24156,'Allen',6595331,'lorem@Curabitursed.org','Staff',22,359),(25048,'Susy',1388772,'tellus.eu.augue@Sed.edu','Staff',13,800),(25061,'Mary',2807561,'magna.Praesent@imperdiet.co.uk','Faculty',91,918),(26318,'Jim',5682399,'nunc.id@enimnon.org','Faculty',73,258),(28773,'Smith',8482896,'tincidunt.nibh.Phasellus@mauris.ca','Faculty',47,117),(33015,'Allen',5467541,'lectus.rutrum.urna@ligulaAenean.net','Driver',49,625),(33495,'Smith',7942088,'mauris@nullamagnamalesuada.net','Staff',19,360),(34011,'Tim',1253333,'Sed.eu@scelerisquesedsapien.net','Faculty',98,399),(40954,'Susan',8087835,'nunc.In@rhoncusDonecest.net','Faculty',12,966),(42181,'Susan',6678221,'Mauris@utmi.edu','Driver',84,492),(45598,'John',7509553,'Class.aptent.taciti@nisi.edu','Staff',45,436),(53391,'Susy',3872672,'facilisis@tinciduntnequevitae.co.uk','Student',50,697),(56237,'Gary',2825355,'neque.Nullam.nisl@Donec.co.uk','Student',18,808),(58389,'Allen',6671254,'ut@Praesent.org','Faculty',33,568),(58757,'Smith',2126870,'feugiat.tellus@euligulaAenean.com','Driver',61,629),(60613,'Alex',5188478,'massa.Suspendisse.eleifend@natoque.com','Student',23,896),(65298,'Smith',8711664,'auctor.Mauris.vel@molestiepharetra.ca','Faculty',66,403),(65617,'Susan',2270775,'ut.nulla@non.edu','Staff',87,22),(68392,'Susan',8017002,'nulla.In@aliquetdiamSed.com','Student',41,87),(71147,'John',8815758,'Aenean.eget@necmalesuadaut.co.uk','Faculty',46,934),(71258,'Smith',9585528,'Ut@pharetra.co.uk','Student',25,443),(72060,'Susy',8211433,'id@nequenonquam.co.uk','Student',18,230),(72406,'Mary',5654373,'Aliquam@risusDonecegestas.edu','Faculty',69,233),(84429,'Tim',1818653,'imperdiet@congue.ca','Driver',33,962),(84699,'Jim',9106840,'nibh@posuere.net','Staff',81,9),(93933,'Jim',2061120,'lorem.sit@Namconsequatdolor.com','Faculty',96,916),(96957,'Mary',4226802,'aliquet.sem@maurisidsapien.ca','Student',5,529),(97161,'Tim',4567711,'urna@Sednec.co.uk','Student',37,849),(97892,'Smith',4125614,'nec.eleifend.non@dis.ca','Staff',52,100),(98109,'Alex',9395972,'at@Aeneanegetmagna.co.uk','Driver',44,910);
 /*!40000 ALTER TABLE `person` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -284,6 +284,31 @@ UNLOCK TABLES;
 --
 -- Dumping routines for database 'unccdeliveries'
 --
+/*!50003 DROP PROCEDURE IF EXISTS `getMenu` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `getMenu`(restaurantName VARCHAR(55))
+BEGIN
+	SELECT DISTINCT food.`description`, price
+	FROM restaurant, food
+	WHERE food.menuId IN (
+		SELECT restaurant.menuId
+		FROM restaurant
+		WHERE restaurantName = restaurant.nameRestaurant
+    );
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `SelectAll` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -355,4 +380,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-05  1:51:57
+-- Dump completed on 2020-05-05 20:25:18
